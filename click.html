@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF Interactivo</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        #gifContainer {
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #gifImage {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="gifContainer">
+        <img id="gifImage" src="hola.gif" alt="GIF" />
+        <button id="playButton">Click aquí</button>
+    </div>
+
+    <script>
+        const gifImage = document.getElementById('gifImage');
+        const playButton = document.getElementById('playButton');
+        const gifContainer = document.getElementById('gifContainer');
+
+        gifContainer.addEventListener('click', () => {
+            if (gifImage.style.display === 'none') {
+                gifImage.style.display = 'block';
+                playButton.style.display = 'none';
+                gifImage.src = gifImage.src; // Reiniciar el GIF
+            } else {
+                gifImage.style.display = 'none';
+                playButton.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
